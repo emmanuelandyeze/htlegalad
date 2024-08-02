@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body className={roboto.className}>
+			<body className={(roboto.className, 'scroll-smooth')}>
 				<Navbar />
 				<div className="bg-gradient-to-b from-navy via-gray-800 to-navy min-h-screen">
 					{children}

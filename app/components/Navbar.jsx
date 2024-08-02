@@ -8,7 +8,7 @@ const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<nav className="bg-navy shadow-md  px-4 lg:py-2">
+		<nav className="bg-navy fixed w-full z-50 px-4 lg:py-2">
 			<div className="flex flex-col max-w-7xl mx-auto items-start w-full">
 				<div className="flex flex-row justify-between items-center w-full">
 					<div className="text-white text-lg font-bold">
@@ -23,17 +23,17 @@ const Navbar = () => {
 					</div>
 					<div className="hidden md:flex space-x-6">
 						{/* Navigation Items */}
-						<Link href="/about">
+						<Link href="#about">
 							<p className="text-secondaryText hover:text-teal hover:underline hover:underline-offset-4">
 								About
 							</p>
 						</Link>
-						<Link href="/services">
+						<Link href="#services">
 							<p className="text-secondaryText hover:text-teal hover:underline hover:underline-offset-4">
 								Services
 							</p>
 						</Link>
-						<Link href="/contact">
+						<Link href="#contact">
 							<p className="text-secondaryText hover:text-teal hover:underline hover:underline-offset-4">
 								Contact
 							</p>
@@ -55,17 +55,17 @@ const Navbar = () => {
 					<div className="md:hidden">
 						<div className="flex flex-row items-center gap-5 px-2">
 							{/* Responsive Navigation Items */}
-							<Link href="/about">
+							<Link href="#about">
 								<p className="text-secondaryText hover:text-teal">
 									About
 								</p>
 							</Link>
-							<Link href="/services">
+							<Link href="#services">
 								<p className="text-secondaryText hover:text-teal">
 									Services
 								</p>
 							</Link>
-							<Link href="/contact">
+							<Link href="#contact">
 								<p className="text-secondaryText hover:text-teal">
 									Contact
 								</p>
