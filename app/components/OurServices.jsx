@@ -5,22 +5,8 @@ import React from 'react';
 const servicesData = [
 	{
 		title: 'EMPLOYMENT & LABOUR RELATIONS',
-		icon: (
-			<svg
-				className="w-8 h-8 text-teal"
-				fill="none"
-				stroke="currentColor"
-				viewBox="0 0 24 24"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<path
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					strokeWidth="2"
-					d="M16 12v4m-8-4v4m-4-4h16M4 8h16a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1V9a1 1 0 011-1z"
-				/>
-			</svg>
-		),
+		image:
+			'https://images.pexels.com/photos/48195/document-agreement-documents-sign-48195.jpeg?auto=compress&cs=tinysrgb&w=600',
 		items: [
 			'Employee Onboarding',
 			'Confidentiality Agreements',
@@ -32,22 +18,8 @@ const servicesData = [
 	},
 	{
 		title: 'CORPORATE & BUSINESS ADVISORY',
-		icon: (
-			<svg
-				className="w-8 h-8 text-teal"
-				fill="none"
-				stroke="currentColor"
-				viewBox="0 0 24 24"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<path
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					strokeWidth="2"
-					d="M8 12l2-2m0 0l3 3m-3-3v12m6 0a2 2 0 001.85-1.06l2-4a2 2 0 00-1.85-2.94h-3.97a2 2 0 01-1.85-1.06l-1-2a2 2 0 00-1.85-1.06h-1.97a2 2 0 00-1.85 1.06l-2 4a2 2 0 001.85 2.94h3.97a2 2 0 011.85 1.06l1 2a2 2 0 001.85 1.06z"
-				/>
-			</svg>
-		),
+		image:
+			'https://images.pexels.com/photos/7841506/pexels-photo-7841506.jpeg?auto=compress&cs=tinysrgb&w=600',
 		items: [
 			'Formation of Companies/Business Registration',
 			'Legal audit and Due Diligence',
@@ -60,22 +32,8 @@ const servicesData = [
 	},
 	{
 		title: 'ESTATE ADMINISTRATION',
-		icon: (
-			<svg
-				className="w-8 h-8 text-teal"
-				fill="none"
-				stroke="currentColor"
-				viewBox="0 0 24 24"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<path
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					strokeWidth="2"
-					d="M7 10v4M17 10v4M5 7a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H7a2 2 0 01-2-2V7z"
-				/>
-			</svg>
-		),
+		image:
+			'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=600',
 		items: [
 			'Obtaining Probate',
 			'Processing Letters of Administration',
@@ -85,22 +43,8 @@ const servicesData = [
 	},
 	{
 		title: 'TECHNOLOGY',
-		icon: (
-			<svg
-				className="w-8 h-8 text-teal"
-				fill="none"
-				stroke="currentColor"
-				viewBox="0 0 24 24"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<path
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					strokeWidth="2"
-					d="M5 7l1.5 1.5L5 10M19 7l-1.5 1.5L19 10M5 17l1.5 1.5L5 20M19 17l-1.5 1.5L19 20M12 11v6m-4-3h8"
-				/>
-			</svg>
-		),
+		image:
+			'https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg?auto=compress&cs=tinysrgb&w=600',
 		items: [
 			'Are you a software developer?',
 			'Does your work entail the development of mobile and web applications?',
@@ -109,22 +53,8 @@ const servicesData = [
 	},
 	{
 		title: 'GENERAL SERVICES',
-		icon: (
-			<svg
-				className="w-8 h-8 text-teal"
-				fill="none"
-				stroke="currentColor"
-				viewBox="0 0 24 24"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<path
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					strokeWidth="2"
-					d="M12 11v6m4-3H8m4-9V5m4 3H8M5 17h14M5 21h14a2 2 0 002-2v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7a2 2 0 002 2z"
-				/>
-			</svg>
-		),
+		image:
+			'https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=600',
 		items: [
 			'LIRS Tax Card Processing',
 			'Tax Clearance Certificates',
@@ -138,22 +68,8 @@ const servicesData = [
 	},
 	{
 		title: 'FAMILY LAW',
-		icon: (
-			<svg
-				className="w-8 h-8 text-teal"
-				fill="none"
-				stroke="currentColor"
-				viewBox="0 0 24 24"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<path
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					strokeWidth="2"
-					d="M3 7h18M3 11h18M3 15h18M3 19h18"
-				/>
-			</svg>
-		),
+		image:
+			'https://images.pexels.com/photos/2305212/pexels-photo-2305212.jpeg?auto=compress&cs=tinysrgb&w=600',
 		items: [
 			'Processing Marriage Certificates',
 			'Judicial Separation and Divorce',
@@ -174,25 +90,31 @@ const OurServices = () => {
 				</div>
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-8">
 					{servicesData.map((service, index) => (
-						<div
-							key={index}
-							className="p-6 bg-[#f8f8f8] rounded-lg shadow-lg"
-						>
-							<div className="flex items-center mb-4">
-								{/* {service.icon} */}
-								<h3 className="text-2xl font-bold text-teal ml-2">
-									{service.title}
-								</h3>
+						<div key={index} className="group perspective">
+							<div className="relative w-full h-full transition-transform duration-700 transform-style preserve-3d group-hover:rotate-y-180">
+								<div
+									className="w-full h-64 text-center backface-hidden bg-cover bg-center flex items-center justify-center text-white text-2xl font-bold p-6 rounded-lg shadow-lg relative"
+									style={{
+										backgroundImage: `url(${service.image})`,
+									}}
+								>
+									<div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+									<div className="relative z-10">
+										{service.title}
+									</div>
+								</div>
+								<div className="absolute w-full h-full backface-hidden bg-white p-6 rounded-lg shadow-lg rotate-y-180 flex flex-col items-center justify-center">
+									<ul className="list-disc list-inside text-lg text-primaryText">
+										{service.items.map((item, idx) => (
+											<li key={idx}>{item}</li>
+										))}
+									</ul>
+								</div>
 							</div>
-							<ul className="list-disc list-inside text-lg text-primaryText">
-								{service.items.map((item, idx) => (
-									<li key={idx}>{item}</li>
-								))}
-							</ul>
 						</div>
 					))}
 				</div>
-				<div className='mt-10 flex justify-center items-center'>
+				<div className="mt-10 flex justify-center items-center">
 					<a
 						target="_blank"
 						href="https://forms.gle/D5Zf3JMrEYbquHKj7"

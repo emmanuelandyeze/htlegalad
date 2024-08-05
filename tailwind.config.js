@@ -20,6 +20,24 @@ module.exports = {
 				teal: '#1ABC9C',
 				gold: '#F39C12',
 			},
+			transform: {
+				'preserve-3d': 'preserve-3d',
+			},
+			transformOrigin: {
+				center: 'center',
+			},
+			rotate: {
+				'y-180': 'rotateY(180deg)',
+			},
+			transitionDuration: {
+				700: '700ms',
+			},
+		},
+	},
+	variants: {
+		extend: {
+			transform: ['group-hover'],
+			rotate: ['group-hover'],
 		},
 	},
 	plugins: [],
