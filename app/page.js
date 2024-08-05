@@ -6,7 +6,7 @@ import OurServices from './components/OurServices';
 export default function Home() {
 	return (
 		<div>
-			<div className="flex flex-col lg:flex-row max-w-7xl mx-auto items-center lg:justify-between h-[70vh] lg:h-[100vh] pt-32 lg:pt-28 lg:pb-10  p-4">
+			<div className="flex flex-col lg:flex-row max-w-7xl mx-auto items-center lg:justify-between h-[70vh] lg:h-[100vh] pt-40 lg:pt-28 lg:pb-10  p-4">
 				<div className="flex lg:hidden p-2 absolute bottom-40 justify-center">
 					<Image
 						src="/images/justice3.png"
