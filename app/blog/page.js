@@ -48,7 +48,7 @@ export default function Blog() {
 	};
 
 	return (
-		<div className="pt-20 lg:pt-32">
+		<div className="py-20 lg:py-32 mb-80">
 			<div className="max-w-7xl mx-auto p-4">
 				<div className="flex flex-row items-center mb-8 justify-between">
 					<h1 className="text-2xl font-bold">Blog Posts</h1>
