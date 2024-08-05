@@ -24,7 +24,7 @@ export default function Stats() {
 				</div>
 				<div className="bg-transparent border flex flex-col justify-center items-center text-white h-40 w-40 border-white rounded-lg p-4 text-center">
 					<h2 className="text-md">North America</h2>
-					<p className="text-5xl font-semibold">+80%</p>
+					<p className="text-5xl font-semibold">+8%</p>
 				</div>
 				<div className="bg-transparent border flex flex-col justify-center items-center text-white h-40 w-40 border-white rounded-lg p-4 text-center">
 					<h2 className="text-md">Europe</h2>
