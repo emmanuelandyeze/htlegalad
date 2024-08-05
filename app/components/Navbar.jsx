@@ -3,12 +3,16 @@
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
 	const { data: session, status } = useSession();
+	const pathname = usePathname()
+
+	console.log(pathname)
 
 	const handleScroll = () => {
 		if (window.scrollY > 50) {
@@ -27,7 +31,7 @@ const Navbar = () => {
 
 	return (
 		<nav
-			className={`fixed w-full z-50 px-4 lg:py-2 transition-colors duration-300 ${scrolled ? 'bg-navy' : 'bg-transparent'}`}
+			className={`fixed w-full z-50 px-4 lg:py-2 transition-colors bg-navy duration-300 ${pathname !== '/' ? 'bg-navy' : scrolled ? 'bg-navy' : 'bg-transparent'}`}
 		>
 			<div className="flex flex-col max-w-7xl mx-auto items-start w-full">
 				<div className="flex flex-row py-2 justify-between items-center w-full">
