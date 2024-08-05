@@ -104,7 +104,7 @@ const Navbar = () => {
 							</Link> */}
 							<Link href="/blog">
 								<p className="text-secondaryText hover:text-teal">
-									News and Articles
+									Articles
 								</p>
 							</Link>
 						</div>
