@@ -77,7 +77,7 @@ const Navbar = () => {
 						{/* Appointment Button */}
 						<Link
 							target="_blank"
-							href="https://forms.gle/D5Zf3JMrEYbquHKj7"
+							href="https://www.coachli.co/htlegal"
 						>
 							<p className="bg-[#1ABC9C] text-md text-white py-2 px-4 rounded-md hover:bg-gold transition duration-300">
 								Book an Appointment

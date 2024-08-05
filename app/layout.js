@@ -7,6 +7,7 @@ import {
 import './globals.css';
 import Navbar from './components/Navbar';
 import { Providers } from './providers';
+import Footer from './components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 const roboto = Open_Sans({
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
 					<Providers>
 						<Navbar />
 						{children}
+						<Footer />
 					</Providers>
 				</div>
 			</body>

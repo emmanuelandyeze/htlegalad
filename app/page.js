@@ -5,6 +5,9 @@ import OurServices from './components/OurServices';
 import HeroSection from './components/HeroSection';
 import Advert from './components/Advert';
 import Stats from './components/Stats';
+import Culture from './components/Culture';
+import Faq from './components/Faq';
+import Testimonials from './components/Testimonials';
 
 export default function Home() {
 	return (
@@ -14,7 +17,10 @@ export default function Home() {
 			<Advert />
 			<AboutUs />
 			<OurServices />
+			<Culture />
 			<Stats />
+			<Testimonials />
+			<Faq />
 		</div>
 	);
 }

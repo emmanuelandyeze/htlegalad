@@ -28,7 +28,7 @@ const HeroSection = () => {
 					</p>
 					<a
 						target="_blank"
-						href="https://forms.gle/D5Zf3JMrEYbquHKj7"
+						href="https://www.coachli.co/htlegal"
 						className="bg-white z-20 text-black py-3 px-6 rounded-xl hover:text-white hover:bg-gold transition duration-300"
 					>
 						Book an Appointment
