@@ -16,7 +16,9 @@ const AboutUs = () => {
 
 				<div className="flex flex-col lg:flex-row items-center lg:items-start">
 					<div className="lg:w-1/2">
-						<h1 className='text-2xl mb-3'>Strategy & Foresight</h1>
+						<h1 className="text-2xl mb-3">
+							Strategy & Foresight
+						</h1>
 						<p className="text-lg text-primaryText mb-6">
 							Established in 2021 to offer cost effective
 							legal solutions to MSMEs as well as to cater
@@ -28,7 +30,7 @@ const AboutUs = () => {
 
 						<a
 							target="_blank"
-							href="https://forms.gle/D5Zf3JMrEYbquHKj7"
+							href="https://www.coachli.co/htlegal"
 							className="bg-teal text-white py-3 px-6 rounded hover:bg-gold transition duration-300"
 						>
 							Book an Appointment
