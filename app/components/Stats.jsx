@@ -14,7 +14,7 @@ export default function Stats() {
 			<div className="absolute inset-0 bg-black opacity-50 z-0"></div>
 			<div className="max-w-xl mx-auto relative text-center items-center justify-center">
 				<h2 className="text-3xl  text-white font-bold  z-40 text-center mb-2  border-b-2 border-gold inline-block">
-					Our Stats
+					Client Map
 				</h2>
 			</div>
 			<div className="relative z-10 max-w-xl mx-auto grid grid-cols-2 lg:grid-cols-3 gap-4 items-center justify-center h-full p-4 space-y-4">

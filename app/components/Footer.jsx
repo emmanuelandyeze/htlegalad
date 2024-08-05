@@ -1,4 +1,5 @@
 // components/Footer.js
+import Link from 'next/link';
 import {
 	FaFacebook,
 	FaTwitter,
@@ -8,68 +9,85 @@ import {
 
 export default function Footer() {
 	return (
-		<footer id="contact" className="bg-navy text-white py-8">
+		<footer
+			id="contact"
+			className="bg-gray-50 text-black py-8"
+		>
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div className="flex flex-col md:flex-row justify-between items-center">
+				<div className="flex flex-col md:flex-row justify-between items-start md:items-end">
 					<div className="mb-6 flex flex-col gap-4 md:mb-0">
-						<h3 className="text-xl font-bold mb-2">
-							Contact Information
-						</h3>
-						<p>Address: Lagos, Ibadan</p>
-						<p>
-							Email:{' '}
-							<a
-								href="mailto:hilda@htlegaladvisory.in"
-								className="underline"
-							>
-								Hilda@htlegaladvisory.in
-							</a>
-							,{' '}
-							<a
-								href="mailto:payments@htlegaladvisory.in"
-								className="underline"
-							>
-								Payments@htlegaladvisory.in
-							</a>
-						</p>
-						<p>
-							Opening hours: Monday - Friday, 9am - 5:30pm
-						</p>
-					</div>
-					<div className="flex space-x-6">
-						<a
-							href="https://facebook.com/htlegaladvisory"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-white hover:text-gray-400"
-						>
-							<FaFacebook size={24} />
-						</a>
-						<a
-							href="https://mobile.twitter.com/HTLegal_S"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-white hover:text-gray-400"
-						>
-							<FaTwitter size={24} />
-						</a>
-						<a
-							href="https://www.linkedin.com/company/h-t-legal/"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-white hover:text-gray-400"
-						>
-							<FaLinkedin size={24} />
-						</a>
-						<a
-							href="https://www.instagram.com/htlegal/"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-white hover:text-gray-400"
-						>
-							<FaInstagram size={24} />
-						</a>
-					</div>
+						<div className="mb-5">
+							<h3 className="text-xl font-semibold">
+								HT LEGAL ADVISORY
+							</h3>
+							<p className="italic">
+								Building the businesses of tomorrow.
+							</p>
+						</div>
+						<div className="mb-5">
+							<h3 className="text-lg">CONTACT US</h3>
+							<p className="flex flex-col items-start gap-1">
+								<a
+									href="mailto:hilda@htlegaladvisory.in"
+									className="underline"
+								>
+									Hilda@htlegaladvisory.in
+								</a>
+
+								<a
+									href="mailto:payments@htlegaladvisory.in"
+									className="underline"
+								>
+									Payments@htlegaladvisory.in
+								</a>
+							</p>
+						</div>
+						<div className="mb-5">
+							<h3 className="text-lg">OUR LOCATION</h3>
+							<p>Lagos, Ibadan</p>
+						</div>
+
+						<div className="mb-5">
+							<h3 className="text-lg">FOLLOW US</h3>
+							<div className="flex space-x-6 mt-3">
+								<a
+									href="https://facebook.com/htlegaladvisory"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-blue-500 hover:text-gray-400"
+								>
+									<FaFacebook size={24} />
+								</a>
+								<a
+									href="https://mobile.twitter.com/HTLegal_S"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-blue-500 hover:text-gray-400"
+								>
+									<FaTwitter size={24} />
+								</a>
+								<a
+									href="https://www.linkedin.com/company/h-t-legal/"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-blue-300 hover:text-gray-400"
+								>
+									<FaLinkedin size={24} />
+								</a>
+								<a
+									href="https://www.instagram.com/htlegal/"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-red-500 hover:text-gray-400"
+								>
+									<FaInstagram size={24} />
+								</a>
+							</div>
+						</div>
+                    </div>
+                    <div>
+                        <Link href="/policies"><p>Disclaimer | Privacy Policy</p></Link>
+                    </div>
 				</div>
 				<div className="text-center mt-6">
 					<p className="text-sm">

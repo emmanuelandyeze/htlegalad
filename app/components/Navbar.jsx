@@ -62,14 +62,14 @@ const Navbar = () => {
 								Services
 							</p>
 						</Link>
-						<Link href="/#contact">
+						{/* <Link href="/#contact">
 							<p className="text-secondaryText hover:text-teal hover:underline hover:underline-offset-4">
 								Contact
 							</p>
-						</Link>
+						</Link> */}
 						<Link href="/blog">
 							<p className="text-secondaryText hover:text-teal hover:underline hover:underline-offset-4">
-								Blog
+								News & Articles
 							</p>
 						</Link>
 					</div>
@@ -97,14 +97,14 @@ const Navbar = () => {
 									Services
 								</p>
 							</Link>
-							<Link href="/#contact">
+							{/* <Link href="/#contact">
 								<p className="text-secondaryText hover:text-teal">
 									Contact
 								</p>
-							</Link>
+							</Link> */}
 							<Link href="/blog">
 								<p className="text-secondaryText hover:text-teal">
-									Blog
+									News and Articles
 								</p>
 							</Link>
 						</div>
