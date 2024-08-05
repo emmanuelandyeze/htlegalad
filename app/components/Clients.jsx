@@ -35,7 +35,7 @@ const Clients = () => {
 				(prevIndex) =>
 					(prevIndex + 1) % Math.ceil(images.length / 4),
 			);
-		}, 6000); // Change slide every 3 seconds
+		}, 4000); // Change slide every 3 seconds
 
 		return () => clearInterval(interval);
 	}, [currentIndex]);

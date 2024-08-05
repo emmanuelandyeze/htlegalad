@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const AboutUs = () => {
 	return (
-		<div id='about' className="bg-[#f8f8f8] py-12">
+		<div id="about" className="bg-[#f8f8f8] py-12">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex flex-col mb-6 items-start lg:items-center">
 					<h2 className="text-3xl font-bold text-center mb-1 border-b-2 border-gold inline-block">
@@ -59,7 +59,8 @@ const AboutUs = () => {
 							walking you through each step of the process.
 						</p>
 						<a
-							href="/appointment"
+							target="_blank"
+							href="https://forms.gle/D5Zf3JMrEYbquHKj7"
 							className="bg-teal text-white py-3 px-6 rounded hover:bg-gold transition duration-300"
 						>
 							Book an Appointment

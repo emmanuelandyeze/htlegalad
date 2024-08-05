@@ -192,6 +192,15 @@ const OurServices = () => {
 						</div>
 					))}
 				</div>
+				<div className='mt-10 flex justify-center items-center'>
+					<a
+						target="_blank"
+						href="https://forms.gle/D5Zf3JMrEYbquHKj7"
+						className="bg-teal text-white py-3 px-6 rounded hover:bg-gold transition duration-300"
+					>
+						Book an Appointment
+					</a>
+				</div>
 			</div>
 		</div>
 	);

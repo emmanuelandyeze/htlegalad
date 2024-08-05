@@ -6,6 +6,7 @@ import {
 } from 'next/font/google';
 import './globals.css';
 import Navbar from './components/Navbar';
+import { Providers } from './providers';
 
 const inter = Inter({ subsets: ['latin'] });
 const roboto = Open_Sans({
@@ -22,9 +23,11 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body className={(roboto.className, 'scroll-smooth')}>
-				<Navbar />
-				<div className="bg-gradient-to-b from-navy via-gray-800 to-navy min-h-screen">
-					{children}
+				<div className="bg-white min-h-screen">
+					<Providers>
+						<Navbar />
+						{children}
+					</Providers>
 				</div>
 			</body>
 		</html>
