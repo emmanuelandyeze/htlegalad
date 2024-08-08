@@ -53,9 +53,9 @@ export default function Culture() {
 						Our Culture drives what we do.
 					</h1>
 					<p className="text-base md:text-lg">
-						HT Legal takes client-centered approach that
+						HT Legal takes a client-centered approach that
 						ensures personalized, innovative, and dedicated
-						legal solutions talared to meet
+						legal solutions tailored to meet
 						your unique needs.
 					</p>
 					<div className="mt-10 flex justify-center items-center">
