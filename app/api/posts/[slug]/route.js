@@ -1,4 +1,4 @@
-import { MongoClient } from 'mongodb';
+import { MongoClient, ObjectId } from 'mongodb';
 
 const clientPromise = MongoClient.connect(
 	process.env.MONGODB_URI,
@@ -10,13 +10,11 @@ const clientPromise = MongoClient.connect(
 
 export const GET = async (req, { params }) => {
 	try {
-		// Log the params to verify if slug is retrieved correctly
 		console.log('Params:', params);
 
 		const client = await clientPromise;
-		const db = client.db('htlegal'); // Replace with your database name
+		const db = client.db('htlegal');
 
-		// Ensure slug is defined and not empty
 		if (!params.slug) {
 			return new Response(
 				JSON.stringify({ error: 'Slug is required' }),
@@ -39,8 +37,49 @@ export const GET = async (req, { params }) => {
 			status: 200,
 		});
 	} catch (error) {
-		// Log the error for debugging purposes
 		console.error('Error fetching post:', error);
+		return new Response(
+			JSON.stringify({ error: 'Internal Server Error' }),
+			{
+				status: 500,
+			},
+		);
+	}
+};
+
+export const DELETE = async (req, { params }) => {
+	try {
+		console.log('Params:', params);
+
+		const client = await clientPromise;
+		const db = client.db('htlegal');
+
+		if (!params.slug) {
+			return new Response(
+				JSON.stringify({ error: 'Slug is required' }),
+				{ status: 400 },
+			);
+		}
+
+		const result = await db
+			.collection('posts')
+			.deleteOne({ slug: params.slug });
+
+		if (result.deletedCount === 0) {
+			return new Response(
+				JSON.stringify({ error: 'Post not found' }),
+				{ status: 404 },
+			);
+		}
+
+		return new Response(
+			JSON.stringify({
+				message: 'Post deleted successfully',
+			}),
+			{ status: 200 },
+		);
+	} catch (error) {
+		console.error('Error deleting post:', error);
 		return new Response(
 			JSON.stringify({ error: 'Internal Server Error' }),
 			{

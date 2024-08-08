@@ -24,6 +24,8 @@ export default function Blog() {
 		fetchPosts();
 	}, []);
 
+	
+
 	if (loading) {
 		return (
 			<div className="pt-40 flex justify-center items-center min-h-screen">
@@ -69,36 +71,38 @@ export default function Blog() {
 					columnClassName="masonry-column"
 				>
 					{posts?.map((post) => (
-						<Link
-							href={`/blog/${post.slug}`}
-							key={post._id}
-							className="bg-[#f0f0f0] overflow-hidden shadow rounded-md hover:shadow-md cursor-pointer transition-shadow duration-200 mb-4"
-						>
-							<div className="relative w-full h-full">
-								<Image
-									src={post.image}
-									layout="fill"
-									objectFit="cover"
-									alt="post image"
-								/>
-							</div>
-							<div className="p-4">
-								<h2 className="text-xl font-bold mb-2">
-									{post.title}
-								</h2>
-								<p className="text-gray-600">
-									{post.content
-										.replace(/<[^>]+>/g, '')
-										.slice(0, 100)}
-									...
-								</p>
-								<Link href={`/blog/${post.slug}`}>
-									<p className="text-teal hover:underline mt-4 block">
-										Read more
+						<>
+							<Link
+								href={`/blog/${post.slug}`}
+								key={post._id}
+								className="bg-[#f0f0f0] overflow-hidden shadow rounded-md hover:shadow-md cursor-pointer transition-shadow duration-200 mb-4"
+							>
+								<div className="relative w-full h-full">
+									<Image
+										src={post.image}
+										layout="fill"
+										objectFit="cover"
+										alt="post image"
+									/>
+								</div>
+								<div className="p-4">
+									<h2 className="text-xl font-bold mb-2">
+										{post.title}
+									</h2>
+									<p className="text-gray-600">
+										{post.content
+											.replace(/<[^>]+>/g, '')
+											.slice(0, 100)}
+										...
 									</p>
-								</Link>
-							</div>
-						</Link>
+									<Link href={`/blog/${post.slug}`}>
+										<p className="text-teal hover:underline mt-4 block">
+											Read more
+										</p>
+									</Link>
+								</div>
+							</Link>
+						</>
 					))}
 				</Masonry>
 			</div>

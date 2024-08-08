@@ -5,11 +5,15 @@ import { useParams, useRouter } from 'next/navigation';
 import { Grid } from 'react-loader-spinner';
 // import format from 'date-fns';
 import { IoMdArrowRoundBack } from 'react-icons/io';
+import { useSession } from 'next-auth/react';
+import { toast } from 'react-toast';
 
 export default function Post() {
 	const router = useRouter();
 	const { slug } = useParams();
 	const [post, setPost] = useState(null);
+	const { data: session, status } = useSession();
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		if (slug) {
@@ -24,7 +28,32 @@ export default function Post() {
 		}
 	}, [slug]);
 
-	// console.log(post);
+	const handleDelete = async (slug) => {
+		const confirmed = confirm(
+			'Are you sure you want to delete this post?',
+		);
+		if (confirmed) {
+			try {
+				setLoading(true);
+				const response = await fetch(`/api/posts/${slug}`, {
+					method: 'DELETE',
+				});
+				if (response.ok) {
+					toast.success('Article deleted successfully!');
+					router.push('/blog');
+				} else {
+					console.error('Failed to delete the post');
+				}
+			} catch (error) {
+				console.error(
+					'An error occurred while deleting the post:',
+					error,
+				);
+			} finally {
+				setLoading(false);
+			}
+		}
+	};
 
 	if (!post) {
 		return (
@@ -51,17 +80,27 @@ export default function Post() {
 	return (
 		<div className="pt-20 lg:pt-36">
 			<div className=" max-w-3xl p-4 mx-auto">
-				<div
-					className="flex flex-row gap-3 cursor-pointer items-center mb-5"
-					onClick={() => router.back()}
-				>
-					<IoMdArrowRoundBack
-						size={32}
-						className="text-gray-600"
-					/>
-					<p className="text-lg font-bold text-gray-600">
-						Go Back
-					</p>
+				<div className="flex flex-row justify-between items-center">
+					<div
+						className="flex flex-row gap-3 cursor-pointer items-center mb-5"
+						onClick={() => router.back()}
+					>
+						<IoMdArrowRoundBack
+							size={32}
+							className="text-gray-600"
+						/>
+						<p className="text-lg font-bold text-gray-600">
+							Go Back
+						</p>
+					</div>
+					{status === 'authenticated' && (
+						<button
+							onClick={() => handleDelete(post.slug)}
+							className=" bg-red-600 text-white px-2 py-1 rounded-md"
+						>
+							Delete
+						</button>
+					)}
 				</div>
 			</div>
 			<div
