@@ -16,7 +16,7 @@ const HeroSection = () => {
 				<div className="z-20 w-[100%] lg:w-[50%] flex flex-col justify-between items-start text-left lg:text-left lg:mt-10 pt-0 pb-0 lg:py-10 lg:mr-10 mb-8">
 					<p className="text-lg z-10 text-white mb-8 lg:mb-10 slide-in-left">
 						THE BUSINESS OF TOMORROW
-					</p>
+					</p> 
 					<h1 className="text-5xl z-20 text-white lg:text-7xl leading-[3.5rem] lg:leading-[5rem] font-normal mb-4 lg:mb-8 slide-in-left">
 						Be future-proof and future-ready.
 					</h1>

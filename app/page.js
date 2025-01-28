@@ -8,6 +8,10 @@ import Stats from './components/Stats';
 import Culture from './components/Culture';
 import Faq from './components/Faq';
 import Testimonials from './components/Testimonials';
+import LegalSolutions from './components/LegalSolutions';
+import InformationTechnology from './components/InformationTechnology';
+import AdvisorySectors from './components/AdvisorySectors';
+import Footer from './components/Footer';
 
 export default function Home() {
 	return (
@@ -18,9 +22,13 @@ export default function Home() {
 			<AboutUs />
 			<OurServices />
 			<Culture />
+			<AdvisorySectors />
+			<InformationTechnology />
 			<Stats />
 			<Testimonials />
+			<LegalSolutions />
 			<Faq />
+			<Footer />
 		</div>
 	);
 }

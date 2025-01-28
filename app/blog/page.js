@@ -6,6 +6,7 @@ import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { Grid } from 'react-loader-spinner';
 import Masonry from 'react-masonry-css';
+import Footer from '../components/Footer';
 
 export default function Blog() {
 	const [posts, setPosts] = useState([]);
@@ -50,7 +51,7 @@ export default function Blog() {
 	};
 
 	return (
-		<div className="pt-20 lg:pt-32 mb-80">
+		<div className="pt-20 lg:pt-32 flex-1">
 			<div className="max-w-7xl mx-auto p-4">
 				<div className="flex flex-row items-center mb-8 justify-between">
 					<h1 className="text-2xl font-bold">
@@ -67,7 +68,7 @@ export default function Blog() {
 				</div>
 				<Masonry
 					breakpointCols={breakpointColumnsObj}
-					className="flex w-auto"
+					className="flex w-auto gap-3"
 					columnClassName="masonry-column"
 				>
 					{posts?.map((post) => (
@@ -75,9 +76,9 @@ export default function Blog() {
 							<Link
 								href={`/blog/${post.slug}`}
 								key={post._id}
-								className="bg-[#f0f0f0] overflow-hidden shadow rounded-md hover:shadow-md cursor-pointer transition-shadow duration-200 mb-4"
+								className="bg-[#f0f0f0]  overflow-hidden shadow rounded-md hover:shadow-md cursor-pointer transition-shadow duration-200 mb-4"
 							>
-								<div className="relative w-full h-full">
+								<div className="relative w-full h-60 md:h-full">
 									<Image
 										src={post.image}
 										layout="fill"
@@ -85,7 +86,7 @@ export default function Blog() {
 										alt="post image"
 									/>
 								</div>
-								<div className="p-4">
+								<div className="py-4">
 									<h2 className="text-xl font-bold mb-2">
 										{post.title}
 									</h2>
@@ -106,6 +107,7 @@ export default function Blog() {
 					))}
 				</Masonry>
 			</div>
+			{/* <Footer /> */}
 		</div>
 	);
 }
