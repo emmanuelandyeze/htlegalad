@@ -5,8 +5,8 @@ const InformationTechnology = () => {
         style={{ backgroundImage: "url('/images/it.jpeg')" }}
       >
         <div className="text-left max-w-5xl w-full">
-          <h2 className="text-4xl md:text-5xl font-bold text-red-700">INFORMATION</h2>
-          <h2 className="text-4xl md:text-5xl font-bold text-black">TECHNOLOGY</h2>
+          <h2 className="text-4xl md:text-5xl text-[#051D40]">INFORMATION</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#051D40]">TECHNOLOGY</h2>
           <p className="text-gray-700 mt-4 max-w-2xl">
             Streamlined legal solutions for innovation-focused industries where software is developed as part of engineering solutions.
           </p>

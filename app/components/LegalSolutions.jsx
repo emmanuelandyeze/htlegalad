@@ -1,8 +1,8 @@
 const LegalSolutions = () => {
   return (
-    <div className="w-full flex flex-col items-center justify-center py-12 bg-white px-6">
+    <div className="w-full flex flex-col items-center justify-center pt-12 pb-24 bg-white px-6">
       <h2 className="text-3xl md:text-5xl font-light text-gray-700">
-        Legal <span className="text-red-700 font-bold">Solutions</span> to match
+        Legal <span className="text-[#051D40] font-bold">Solutions</span> to match
         your scale and needs
       </h2>
       <div className="flex md:hidden mt-10 md:w-full md:max-w-4xl bg-gray-100 gap-10 py-10 px-5 md:p-6 rounded-full flex flex-col md:flex-row items-center justify-between relative">
@@ -57,7 +57,7 @@ const LegalSolutions = () => {
           <div className="mt-8"></div>
         </div>
       </div>
-      <div class="support-segment max-w-3xl mt-10 md:mt-20 bg-gray-100 p-6 rounded-2xl shadow-md">
+      {/* <div class="support-segment max-w-3xl mt-10 md:mt-20 bg-gray-100 p-6 rounded-2xl shadow-md">
         <h2 class="text-2xl font-bold text-gray-800 mb-4">
           Need Assistance? We're Here to Help!
         </h2>
@@ -75,7 +75,7 @@ const LegalSolutions = () => {
         >
           Log a Complaint Now
         </a>
-      </div>
+      </div> */}
     </div>
   );
 };

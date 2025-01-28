@@ -12,6 +12,9 @@ import LegalSolutions from './components/LegalSolutions';
 import InformationTechnology from './components/InformationTechnology';
 import AdvisorySectors from './components/AdvisorySectors';
 import Footer from './components/Footer';
+import NicheServices from './components/NicheServices';
+import Funding from './components/Funding';
+import NonProfit from './components/NonProfit';
 
 export default function Home() {
 	return (
@@ -22,11 +25,15 @@ export default function Home() {
 			<AboutUs />
 			<OurServices />
 			<Culture />
+			<NicheServices />
 			<AdvisorySectors />
 			<InformationTechnology />
+			<Funding />
+			<LegalSolutions />
+			<NonProfit />
 			<Stats />
 			<Testimonials />
-			<LegalSolutions />
+			
 			<Faq />
 			<Footer />
 		</div>
