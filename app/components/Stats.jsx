@@ -16,6 +16,15 @@ export default function Stats() {
 				<h2 className="text-[40px] uppercase text-white font-bold  z-40 text-center mb-2  border-b-2 border-gold inline-block">
 					Client Map
 				</h2>
+				<p className="mb-6 text-[16px] md:w-[60%] md:text-center">
+					We break barriers and transcend borders to provide
+					world-class legal services to clients worldwide.
+					Whether you are a business expanding into new
+					markets, an entrepreneur navigating local and
+					national regulations, or an individual seeking
+					legal guidance from anywhere in the world, our law
+					practice is equipped to serve you.
+				</p>
 			</div>
 			<div className="relative z-10 max-w-xl mx-auto grid grid-cols-2 lg:grid-cols-3 gap-4 items-center justify-center h-full p-4 space-y-4">
 				<div className="bg-transparent border flex flex-col justify-center items-center text-white h-40 w-40 border-white rounded-lg p-4 text-center">

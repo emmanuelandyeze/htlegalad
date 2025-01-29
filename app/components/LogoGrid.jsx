@@ -1,29 +1,48 @@
-import Image from "next/image";
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const logos = [
-  "/images/cl1.png",
-  "/images/cl2.png",
-  "/images/cl3.png",
-  "/images/cl4.png",
-  "/images/cl5.png",
-  "/images/client1.jpg",
-  "/images/client2.jpg",
-  "/images/client3.jpg",
-  "/images/client4.jpg",
- "/images/client5.jpg",
- "/images/client6.jpg",
-  "/images/client7.jpg",
-  "/images/client8.jpg",
+	'/images/clients/1.png',
+	'/images/clients/2.png',
+	'/images/clients/3.png',
+	'/images/clients/4.png',
+	'/images/clients/5.png',
+	'/images/clients/6.png',
+	'/images/clients/7.png',
+	'/images/clients/8.png',
+	'/images/clients/9.png',
+	'/images/clients/10.png',
+	'/images/clients/11.png',
+	'/images/clients/12.png',
+	'/images/clients/13.png',
+	'/images/clients/14.png',
+	'/images/clients/15.png',
+	'/images/clients/16.png',
+	'/images/clients/17.png',
+	'/images/clients/18.png',
 ];
 
 const LogoGrid = () => {
-  return (
-    <div className="grid grid-cols-5 gap-8 p-6 items-center justify-center">
-      {logos.map((src, index) => (
-        <Image key={index} src={src} alt="Company logo" width={120} height={60} className="object-contain" />
-      ))}
-    </div>
-  );
+	return (
+		<div className="grid grid-cols-5 gap-8 p-6 items-center justify-center">
+			{logos.map((src, index) => (
+				<motion.div
+					key={index}
+					initial={{ opacity: 0, scale: 0.8 }}
+					animate={{ opacity: 1, scale: 1 }}
+					transition={{ duration: 0.5, delay: index * 0.1 }}
+				>
+					<Image
+						src={src}
+						alt="Company logo"
+						width={120}
+						height={60}
+						className="object-contain"
+					/>
+				</motion.div>
+			))}
+		</div>
+	);
 };
 
 export default LogoGrid;

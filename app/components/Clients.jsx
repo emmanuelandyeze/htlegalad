@@ -48,13 +48,7 @@ const Clients = () => {
 					Our Clients
 				</h2>
 				<p className="mb-6 text-[16px] md:w-[60%] md:text-center">
-					We break barriers and transcend borders to provide
-					world-class legal services to clients worldwide.
-					Whether you are a business expanding into new
-					markets, an entrepreneur navigating local and
-					national regulations, or an individual seeking
-					legal guidance from anywhere in the world, our law
-					practice is equipped to serve you.
+					Some of our clients
 				</p>
 				<div className="overflow-hidden">
 					{/* <div ref={slideRef} className="flex">
