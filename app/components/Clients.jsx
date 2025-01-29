@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import LogoGrid from './LogoGrid';
 
 const images = [
 	{ src: '/images/client1.jpg', alt: 'Client 1' },
@@ -43,15 +44,20 @@ const Clients = () => {
 	return (
 		<div className="bg-white pt-5 lg:pt-10 pb-10">
 			<div className="max-w-7xl flex flex-col justify-center items-start lg:items-center p-4 mx-auto">
-				<h2 className="text-[40px] uppercase font-bold text-center mb-2  border-b-2 border-gold inline-block">
+				<h2 className="text-[40px] uppercase font-bold text-left mb-2  border-b-2 border-gold inline-block">
 					Our Clients
 				</h2>
-				<p className="mb-6 text-[16px]">
-					We take pride in doing our best work for each
-					client.
+				<p className="mb-6 text-[16px] md:w-[60%] md:text-center">
+					We break barriers and transcend borders to provide
+					world-class legal services to clients worldwide.
+					Whether you are a business expanding into new
+					markets, an entrepreneur navigating local and
+					national regulations, or an individual seeking
+					legal guidance from anywhere in the world, our law
+					practice is equipped to serve you.
 				</p>
 				<div className="overflow-hidden">
-					<div ref={slideRef} className="flex">
+					{/* <div ref={slideRef} className="flex">
 						{Array.from({
 							length: Math.ceil(images.length / 5),
 						}).map((_, slideIndex) => (
@@ -84,7 +90,8 @@ const Clients = () => {
 									))}
 							</div>
 						))}
-					</div>
+					</div> */}
+					<LogoGrid />
 				</div>
 			</div>
 		</div>
