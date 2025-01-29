@@ -18,7 +18,7 @@ const logos = [
 
 const LogoGrid = () => {
   return (
-    <div className="grid grid-cols-4 gap-8 p-6 items-center justify-items-center">
+    <div className="grid grid-cols-5 gap-8 p-6 items-center justify-center">
       {logos.map((src, index) => (
         <Image key={index} src={src} alt="Company logo" width={120} height={60} className="object-contain" />
       ))}
