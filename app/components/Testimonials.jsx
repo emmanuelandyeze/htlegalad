@@ -30,7 +30,7 @@ export default function Testimonials() {
 
   return (
     <div className="max-w-5xl mx-auto py-8 h-[45vh] px-4 sm:px-6 lg:px-8">
-      <h2 className="text-[40px] font-bold text-center mb-6">Testimonials</h2>
+      <h2 className="text-[40px] uppercase font-bold text-center mb-6">Testimonials</h2>
       <div className="relative w-full h-full">
         {testimonials.map((testimonial, index) => (
           <div

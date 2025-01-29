@@ -13,7 +13,7 @@ export default function Stats() {
 			/>
 			<div className="absolute inset-0 bg-black opacity-10 z-0"></div>
 			<div className="max-w-xl mx-auto relative text-center items-center justify-center">
-				<h2 className="text-[40px]  text-white font-bold  z-40 text-center mb-2  border-b-2 border-gold inline-block">
+				<h2 className="text-[40px] uppercase text-white font-bold  z-40 text-center mb-2  border-b-2 border-gold inline-block">
 					Client Map
 				</h2>
 			</div>

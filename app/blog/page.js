@@ -45,7 +45,7 @@ export default function Blog() {
 	}
 
 	const breakpointColumnsObj = {
-		default: 4,
+		default: 3,
 		1100: 2,
 		700: 1,
 	};
@@ -76,13 +76,13 @@ export default function Blog() {
 							<Link
 								href={`/blog/${post.slug}`}
 								key={post._id}
-								className="bg-[#f0f0f0]  overflow-hidden shadow rounded-md hover:shadow-md cursor-pointer transition-shadow duration-200 mb-4"
+								className="bg-[#f0f0f0] hover:border hover:border-2 overflow-hidden shadow rounded-md hover:shadow-md cursor-pointer transition-shadow duration-200 mb-4"
 							>
 								<div className="relative w-full h-60 md:h-full">
 									<Image
 										src={post.image}
 										layout="fill"
-										objectFit="cover"
+										objectFit="contain"
 										alt="post image"
 									/>
 								</div>
