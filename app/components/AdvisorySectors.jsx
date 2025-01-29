@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const AdvisorySectors = () => {
   return (
-    <div className="relative w-full py-10 flex items-center justify-center bg-gray-100">
+    <div className="relative w-full py-10 md:py-40 flex items-center justify-center bg-gray-100">
       <Image 
         src="/images/advisory.jpeg" 
         alt="Background" 
@@ -11,7 +11,7 @@ const AdvisorySectors = () => {
         className="absolute inset-0 z-0 opacity-[0.9]"
       />
       <div className="relative z-10 text-center w-full max-w-6xl p-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-black mb-8">
+        <h2 className="text-[40px] md:text-4xl font-bold text-black mb-8">
           SECTORS WE HAVE ADVISED
         </h2>
         <div className="grid md:grid-cols-3 gap-6">

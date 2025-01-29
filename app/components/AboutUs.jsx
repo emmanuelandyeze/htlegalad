@@ -8,7 +8,7 @@ const AboutUs = () => {
 		<div id="about" className="bg-[#f8f8f8] py-12">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex flex-col mb-3 items-start lg:items-start">
-					<h2 className="text-3xl font-bold text-center mb-1 border-b-2 border-gold inline-block">
+					<h2 className="text-[40px] font-bold text-center mb-1 border-b-2 border-gold inline-block">
 						About Us
 					</h2>
 					{/* <p>Who we are and what makes us tick.</p> */}

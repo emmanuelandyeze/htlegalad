@@ -43,10 +43,10 @@ const Clients = () => {
 	return (
 		<div className="bg-white pt-5 lg:pt-10 pb-10">
 			<div className="max-w-7xl flex flex-col justify-center items-start lg:items-center p-4 mx-auto">
-				<h2 className="text-3xl font-bold text-center mb-2  border-b-2 border-gold inline-block">
+				<h2 className="text-[40px] font-bold text-center mb-2  border-b-2 border-gold inline-block">
 					Our Clients
 				</h2>
-				<p className="mb-6">
+				<p className="mb-6 text-[16px]">
 					We take pride in doing our best work for each
 					client.
 				</p>

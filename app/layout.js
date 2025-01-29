@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body
-				className={(dmsans.className, 'scroll-smooth')}
+				className={(opensans.className, 'scroll-smooth')}
 			>
 				<div className="bg-white min-h-screen">
 					<Providers>

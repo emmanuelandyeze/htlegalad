@@ -15,6 +15,11 @@ import Footer from './components/Footer';
 import NicheServices from './components/NicheServices';
 import Funding from './components/Funding';
 import NonProfit from './components/NonProfit';
+import Solutions from './components/Solutions';
+import ProBonoSupport from './components/ProBonoSupport';
+import Women from './components/Women';
+import FAQ from './components/Faq';
+import Assistance from './components/Assistance';
 
 export default function Home() {
 	return (
@@ -23,7 +28,7 @@ export default function Home() {
 			<Clients />
 			<Advert />
 			<AboutUs />
-			<OurServices />
+			{/* <OurServices /> */}
 			<Culture />
 			<NicheServices />
 			<AdvisorySectors />
@@ -31,10 +36,15 @@ export default function Home() {
 			<Funding />
 			<LegalSolutions />
 			<NonProfit />
+			<Solutions />
 			<Stats />
-			<Testimonials />
+			<ProBonoSupport />
+			<Women />
 			
-			<Faq />
+			
+			<FAQ />
+			<Assistance />
+			<Testimonials />
 			<Footer />
 		</div>
 	);

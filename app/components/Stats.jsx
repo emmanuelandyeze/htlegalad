@@ -5,15 +5,15 @@ export default function Stats() {
 	return (
 		<div className="relative w-full py-10">
 			<Image
-				src="/images/stats.jpg"
+				src="/images/stats.jpeg"
 				alt="Background"
 				layout="fill"
 				objectFit="cover"
 				className="absolute z-0"
 			/>
-			<div className="absolute inset-0 bg-black opacity-50 z-0"></div>
+			<div className="absolute inset-0 bg-black opacity-10 z-0"></div>
 			<div className="max-w-xl mx-auto relative text-center items-center justify-center">
-				<h2 className="text-3xl  text-white font-bold  z-40 text-center mb-2  border-b-2 border-gold inline-block">
+				<h2 className="text-[40px]  text-white font-bold  z-40 text-center mb-2  border-b-2 border-gold inline-block">
 					Client Map
 				</h2>
 			</div>

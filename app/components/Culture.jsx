@@ -33,7 +33,7 @@ export default function Culture() {
 	}, []);
 
 	return (
-		<div className="max-w-5xl mx-auto pb-10" ref={ref}>
+		<div className="max-w-5xl mx-auto pt-10 pb-10" ref={ref}>
 			<div className="flex flex-col md:flex-row-reverse items-center justify-between p-4">
 				<div
 					className={` flex justify-center md:justify-start mb-4 md:mb-0 transition-transform duration-1000 ${isVisible ? 'transform translate-x-0' : 'transform -translate-x-full'}`}
@@ -52,7 +52,7 @@ export default function Culture() {
 					<h1 className="text-4xl font-normal leading-[3rem] mb-6">
 						Our Culture drives what we do.
 					</h1>
-					<p className="text-base md:text-lg">
+					<p className="text-[16px] md:text-lg">
 						HT Legal takes a client-centered approach that
 						ensures personalized, innovative, and dedicated
 						legal solutions tailored to meet

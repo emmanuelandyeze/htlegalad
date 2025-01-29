@@ -44,7 +44,7 @@ const services = [
 const NicheServices = () => {
   return (
     <div className="w-full mx-auto max-w-7xl flex flex-col justify-center pt-12 py-20 bg-white px-4">
-      <h2 className="text-3xl md:text-5xl uppercase font-light text-[#051D40]">
+      <h2 className="text-[40px] md:text-5xl uppercase font-light text-[#051D40]">
         Our "Niche"
       </h2>
       <h2 className="text-3xl md:text-5xl font-bold uppercase md:font-semibold text-[#051D40]">
@@ -67,7 +67,7 @@ const NicheServices = () => {
               </ul>
             </div>
             <button className="w-full bg-gray-200 text-black py-2 px-4 rounded-none hover:bg-gray-300 transition">
-              Book an Appointment
+              <a href="https://www.coachli.co/htlegal">Book an Appointment</a>
             </button>
           </div>
         ))}
