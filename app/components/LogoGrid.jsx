@@ -1,5 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 const logos = [
 	'/images/clients/1.png',
@@ -23,14 +27,17 @@ const logos = [
 ];
 
 const LogoGrid = () => {
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true, margin: '-100px' });
+
 	return (
-		<div className="grid grid-cols-5 gap-8 p-6 items-center justify-center">
+		<div ref={ref} className="grid grid-cols-5 gap-8 p-6 items-center justify-center">
 			{logos.map((src, index) => (
 				<motion.div
 					key={index}
 					initial={{ opacity: 0, scale: 0.8 }}
-					animate={{ opacity: 1, scale: 1 }}
-					transition={{ duration: 0.5, delay: index * 0.1 }}
+					animate={isInView ? { opacity: 1, scale: 1 } : {}}
+					transition={{ duration: 0.7, delay: index * 0.3 }}
 				>
 					<Image
 						src={src}
