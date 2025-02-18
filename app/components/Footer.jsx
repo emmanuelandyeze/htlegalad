@@ -88,8 +88,20 @@ export default function Footer() {
 				{/* Bottom Section */}
 				<div className=" mt-6 md:mt-0 text-sm text-gray-600 flex flex-col items-center md:items-end">
 					<p className="md:text-right">
-						DISCLAIMER | PRIVACY POLICY | OPERATING
-						PROCEDURE
+						<a
+							className="text-blue-700 underline"
+							href="/policies"
+						>
+							DISCLAIMER
+						</a>{' '}
+						|{' '}
+						<a
+							className="text-blue-700 underline"
+							href="/policies#policy"
+						>
+							PRIVACY POLICY
+						</a>{' '}
+						| OPERATING PROCEDURE
 					</p>
 					<p className="mt-2">
 						&copy; 2025 HT LEGAL ADVISORY. All rights
