@@ -5,8 +5,19 @@ import Link from 'next/link';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { Grid } from 'react-loader-spinner';
-import Masonry from 'react-masonry-css';
+import dynamic from 'next/dynamic';
 import Footer from '../components/Footer';
+
+// Use dynamic import for Masonry to avoid SSR issues
+const Masonry = dynamic(() => import('react-masonry-css'), {
+	ssr: false,
+});
+
+const breakpointColumnsObj = {
+	default: 3,
+	1100: 2,
+	700: 1,
+};
 
 export default function Blog() {
 	const [posts, setPosts] = useState([]);
@@ -16,16 +27,21 @@ export default function Blog() {
 	useEffect(() => {
 		async function fetchPosts() {
 			setLoading(true);
-			const response = await fetch('/api/posts');
-			const data = await response.json();
-			setPosts(data);
-			setLoading(false);
+			try {
+				const response = await fetch('/api/posts');
+				const data = await response.json();
+				if (Array.isArray(data)) {
+					setPosts(data);
+				}
+			} catch (error) {
+				console.error('Error fetching posts:', error);
+			} finally {
+				setLoading(false);
+			}
 		}
 
 		fetchPosts();
 	}, []);
-
-	
 
 	if (loading) {
 		return (
@@ -44,12 +60,6 @@ export default function Blog() {
 		);
 	}
 
-	const breakpointColumnsObj = {
-		default: 3,
-		1100: 2,
-		700: 1,
-	};
-
 	return (
 		<div className="pt-20 lg:pt-32 flex-1">
 			<div className="max-w-7xl mx-auto p-4">
@@ -62,7 +72,7 @@ export default function Blog() {
 							href={'/blog/new'}
 							className="bg-navy px-4 py-2 rounded-md"
 						>
-							<p className="text-white">Create new post</p>
+							<span className="text-white">Create new post</span>
 						</Link>
 					)}
 				</div>
@@ -72,38 +82,34 @@ export default function Blog() {
 					columnClassName="masonry-column"
 				>
 					{posts?.map((post) => (
-						<>
-							<Link
-								href={`/blog/${post.slug}`}
-								key={post._id}
-								className="bg-[#f0f0f0] hover:border hover:border-2 overflow-hidden shadow rounded-md hover:shadow-md cursor-pointer transition-shadow duration-200 mb-4"
-							>
-								<div className="relative w-full h-60 md:h-full">
-									<Image
-										src={post.image}
-										layout="fill"
-										objectFit="contain"
-										alt="post image"
-									/>
-								</div>
-								<div className="py-4">
-									<h2 className="text-xl font-bold mb-2">
-										{post.title}
-									</h2>
-									<p className="text-gray-600">
-										{post.content
-											.replace(/<[^>]+>/g, '')
-											.slice(0, 100)}
-										...
-									</p>
-									<Link href={`/blog/${post.slug}`}>
-										<p className="text-teal hover:underline mt-4 block">
-											Read more
-										</p>
-									</Link>
-								</div>
-							</Link>
-						</>
+						<Link
+							href={`/blog/${post.slug}`}
+							key={post._id}
+							className="bg-[#f0f0f0] hover:border hover:border-2 overflow-hidden shadow rounded-md hover:shadow-md cursor-pointer transition-shadow duration-200 mb-4 block"
+						>
+							<div className="relative w-full h-60 md:h-full min-h-[15rem]">
+								<Image
+									src={post.image || '/images/placeholder.jpg'}
+									layout="fill"
+									objectFit="cover"
+									alt={post.title || "post image"}
+								/>
+							</div>
+							<div className="py-4 px-4">
+								<h2 className="text-xl font-bold mb-2">
+									{post.title}
+								</h2>
+								<p className="text-gray-600">
+									{(post.content || '')
+										.replace(/<[^>]+>/g, '')
+										.slice(0, 100)}
+									...
+								</p>
+								<span className="text-teal hover:underline mt-4 block">
+									Read more
+								</span>
+							</div>
+						</Link>
 					))}
 				</Masonry>
 			</div>
@@ -111,3 +117,4 @@ export default function Blog() {
 		</div>
 	);
 }
+

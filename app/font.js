@@ -1,27 +1,13 @@
 // app/font.ts
+import { Open_Sans, DM_Sans } from 'next/font/google';
 
-import {  } from 'next/font/google';
-
-export const opensans = import('next/font/google')({ 
-
-    fontFamily: 'Open_Sans', 
-
+export const opensans = Open_Sans({ 
     subsets: ['latin'],
-
-    // variable: '--font-roboto',
-
     weight: ['400', '500', '600', '700', '800'],
-
 });
 
-export const dmsans = import('next/font/google')({ 
-
-    fontFamily: 'DM_Sans', 
-
+export const dmsans = DM_Sans({ 
     subsets: ['latin'],
-
-    // variable: '--font-roboto',
-
     weight: ['400', '500', '600', '700', '800'],
-
 });
+
