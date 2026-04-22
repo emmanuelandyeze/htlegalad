@@ -1,6 +1,6 @@
 'use client';
 
-import { useSession } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -72,6 +72,21 @@ const Navbar = () => {
 								News & Articles
 							</p>
 						</Link>
+						{session && (
+							<div className="flex items-center space-x-6">
+								<Link href="/admin">
+									<p className="text-teal font-bold hover:underline hover:underline-offset-4 transition-all">
+										Admin
+									</p>
+								</Link>
+								{/* <button
+									onClick={() => signOut()}
+									className="text-secondaryText hover:text-red-400 font-medium transition-colors"
+								>
+									Logout
+								</button> */}
+							</div>
+						)}
 					</div>
 					<div className="hidden md:block">
 						{/* Appointment Button */}
@@ -107,6 +122,21 @@ const Navbar = () => {
 									Articles
 								</p>
 							</Link>
+							{session && (
+								<div className="flex flex-row items-center gap-5">
+									<Link href="/admin">
+										<p className="text-teal font-bold transition-all">
+											Admin
+										</p>
+									</Link>
+									{/* <button
+										onClick={() => signOut()}
+										className="text-secondaryText hover:text-red-400 font-medium transition-colors"
+									>
+										Logout
+									</button> */}
+								</div>
+							)}
 						</div>
 					</div>
 				</div>

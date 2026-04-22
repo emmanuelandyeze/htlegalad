@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css';
 import { useForm } from 'react-hook-form';
 import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { HiArrowLeft, HiCloudUpload, HiCheck } from 'react-icons/hi';
 import Link from 'next/link';
@@ -14,27 +14,50 @@ const ReactQuill = dynamic(() => import('react-quill'), {
 	ssr: false,
 });
 
-const CreatePost = () => {
+const EditPost = () => {
 	const { data: session, status } = useSession();
-	const { register, handleSubmit, reset } = useForm();
+	const { register, handleSubmit, reset, setValue } = useForm();
 	const [content, setContent] = useState('');
 	const [image, setImage] = useState(null);
 	const router = useRouter();
+	const params = useParams();
 	const [loading, setLoading] = useState(false);
+	const [fetching, setFetching] = useState(true);
 
 	useEffect(() => {
 		if (status === 'unauthenticated') {
 			router.push('/auth/signin');
+		} else if (status === 'authenticated' && params.slug) {
+			fetchPost();
 		}
-	}, [status]);
+	}, [status, params.slug]);
+
+	const fetchPost = async () => {
+		try {
+			const res = await fetch(`/api/posts/${params.slug}`);
+			if (res.ok) {
+				const post = await res.json();
+				setValue('title', post.title);
+				setContent(post.content);
+				setImage(post.image);
+			} else {
+				alert('Post not found');
+				router.push('/admin');
+			}
+		} catch (error) {
+			console.error('Error fetching post:', error);
+		} finally {
+			setFetching(false);
+		}
+	};
 
 	const onSubmit = async (data) => {
 		setLoading(true);
 		data.content = content;
 		data.image = image;
-		data.author = session.user.email;
-		const res = await fetch('/api/posts', {
-			method: 'POST',
+
+		const res = await fetch(`/api/posts/${params.slug}`, {
+			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
 			},
@@ -43,14 +66,11 @@ const CreatePost = () => {
 
 		if (res.ok) {
 			setLoading(false);
-			alert('Post created successfully!');
-			reset();
-			setContent('');
-			setImage(null);
+			alert('Post updated successfully!');
 			router.push('/admin');
 		} else {
 			setLoading(false);
-			alert('Post not created. Please try again!');
+			alert('Failed to update post');
 		}
 	};
 
@@ -71,7 +91,6 @@ const CreatePost = () => {
 					body: formData,
 				},
 			);
-
 			const data = await res.json();
 			setImage(data.secure_url);
 		} catch (error) {
@@ -82,7 +101,7 @@ const CreatePost = () => {
 		}
 	};
 
-	if (status === 'loading') {
+	if (status === 'loading' || fetching) {
 		return (
 			<div className="min-h-screen flex items-center justify-center bg-[#f8fafc]">
 				<div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-navy"></div>
@@ -101,7 +120,7 @@ const CreatePost = () => {
 						<HiArrowLeft className="mr-2 h-5 w-5 transform group-hover:-translate-x-1 transition-transform" />
 						Back to Dashboard
 					</Link>
-					<h1 className="text-2xl font-extrabold text-navy tracking-tight">Create New Post</h1>
+					<h1 className="text-2xl font-extrabold text-navy tracking-tight">Edit Post</h1>
 				</div>
 
 				<motion.div
@@ -190,12 +209,12 @@ const CreatePost = () => {
 											<circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
 											<path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
 										</svg>
-										Posting...
+										Updating...
 									</>
 								) : (
 									<>
 										<HiCheck className="-ml-1 mr-2 h-6 w-6" />
-										Create Post
+										Update Post
 									</>
 								)}
 							</button>
@@ -207,4 +226,4 @@ const CreatePost = () => {
 	);
 };
 
-export default CreatePost;
+export default EditPost;
